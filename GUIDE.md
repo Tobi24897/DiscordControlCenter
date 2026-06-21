@@ -100,7 +100,7 @@ Settings → **"News feeds"** → pick a preset (WSJ, FT, CNBC, MarketWatch, Blo
 
 - **Arrange columns:** drag a column header with the mouse (or use the arrows). Saved automatically.
 - **Column width:** the **S / M / L / XL** button per column.
-- **"Clear" a column:** the checkmark on a column shows only new messages from then on.
+- **"Clear" a column:** the **✓** button on a column header shows only new messages from then on.
 - **History depth:** Settings → **"History window"** sets how far back it loads and how long it keeps messages (default: 1 week).
 - **Notifications:** on/off per channel, optionally keyword-only. The first time, the browser asks permission for desktop alerts — "Allow".
 - **`$TICKER`** click → opens the TradingView chart.
