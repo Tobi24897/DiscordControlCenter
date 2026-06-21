@@ -16,7 +16,7 @@ Läuft lokal auf deinem Windows-PC. **Keine Installation, kein Programmieren, ko
 
 **So geht's richtig — in 2 Minuten:**
 
-1. **[➡️ Hier die fertige ZIP herunterladen](../../releases/latest)** — auf der Release-Seite die Datei **`DiscordControlCenter.zip`** anklicken.
+1. **[➡️ Hier die fertige ZIP herunterladen](https://github.com/Tobi24897/DiscordControlCenter/releases/latest)** — auf der Release-Seite die Datei **`DiscordControlCenter.zip`** anklicken.
 2. ZIP **entpacken** (Rechtsklick → „Alle extrahieren…"). Den entpackten Ordner irgendwohin legen, z. B. auf den Desktop.
 3. Im Ordner **`Discord Control Center starten.vbs`** doppelklicken.
 4. Der Browser öffnet sich. Oben in den **Einstellungen** einmal mit Discord einloggen (ein Klick, siehe Anleitung) — fertig.

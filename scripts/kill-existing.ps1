@@ -1,20 +1,20 @@
 #requires -Version 5.1
 <#
 .SYNOPSIS
-    Cleanly terminate any running DiscordChannelCrawler backend before a fresh start.
+    Cleanly terminate any running Discord Control Center backend before a fresh start.
 
 .DESCRIPTION
-    Targets ONLY this project's processes, never the whole machine:
-      1) python / pythonw processes whose executable lives in this repo's .venv
-         or whose command line references this repo's backend\main.py (catches the
-         live backend AND any orphaned/zombie instance), and
+    Targets ONLY this app's processes, never the whole machine:
+      1) python / pythonw processes whose executable lives in this folder's bundled
+         python\ runtime or whose command line references this folder's backend\main.py
+         (catches the live backend AND any orphaned/zombie instance), and
       2) whatever process currently owns the dashboard port (belt-and-suspenders).
 
     Unrelated Python processes (MCP servers, other venvs, system Python) are left
     untouched. The SQLite store uses WAL, so a hard kill is safe.
 
 .PARAMETER Root
-    Absolute path to the repo root (the folder containing the backend directory).
+    Absolute path to the app root (the folder containing the backend directory).
 
 .PARAMETER Port
     Dashboard TCP port to free up. Default 8020.
@@ -30,18 +30,18 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-# This repo's backend entrypoint + venv prefix are the discriminators. Both are
-# unique to this app, so unrelated python processes are never matched.
+# This app's backend entrypoint + bundled-python prefix are the discriminators.
+# Both are unique to this app, so unrelated python processes are never matched.
 $mainPy = (Join-Path $Root 'backend\main.py')
-$venvPrefix = (Join-Path $Root 'python')
+$pyPrefix = (Join-Path $Root 'python')
 
 function Get-AppProcessIds {
     $ids = [System.Collections.Generic.HashSet[int]]::new()
 
     # 1) Any python(w) instance of THIS app. Two complementary discriminators,
-    #    because the backend is launched with cwd=backend so its command line is
-    #    the RELATIVE "main.py" (not the full path):
-    #      a) executable lives in this repo's .venv  -> catches venv launches
+    #    because the backend may be launched with cwd=backend so its command line
+    #    can be the RELATIVE "main.py" (not the full path):
+    #      a) executable lives in this folder's bundled python\  -> catches it
     #         even when the command line is just "main.py"
     #      b) command line contains the full backend\main.py path
     try {
@@ -50,9 +50,9 @@ function Get-AppProcessIds {
         foreach ($p in $procs) {
             $cmd = [string]$p.CommandLine
             $exe = [string]$p.ExecutablePath
-            $matchVenv = $exe -and $exe.StartsWith($venvPrefix, $cmp)
+            $matchPy = $exe -and $exe.StartsWith($pyPrefix, $cmp)
             $matchPath = $cmd -and $cmd.IndexOf($mainPy, $cmp) -ge 0
-            if ($matchVenv -or $matchPath) {
+            if ($matchPy -or $matchPath) {
                 [void]$ids.Add([int]$p.ProcessId)
             }
         }
@@ -77,7 +77,7 @@ function Get-AppProcessIds {
 $targets = Get-AppProcessIds
 
 if ($targets.Count -eq 0) {
-    Write-Host "  No running DiscordChannelCrawler instance found. Clean to start."
+    Write-Host "  No running Discord Control Center instance found. Clean to start."
     exit 0
 }
 

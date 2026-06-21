@@ -8,7 +8,7 @@ Diese Anleitung führt dich Schritt für Schritt durch alles. Du brauchst **kein
 
 ## 1. Herunterladen
 
-1. Gehe auf die **[Releases-Seite](../../releases/latest)** des Projekts.
+1. Gehe auf die **[Releases-Seite](https://github.com/Tobi24897/DiscordControlCenter/releases/latest)** des Projekts.
 2. Lade dort die Datei **`DiscordControlCenter.zip`** herunter (unter „Assets").
 
 > ⚠️ Benutze **nicht** den grünen Knopf „Code → Download ZIP" auf der Startseite. Der enthält nur den Quellcode, **nicht** das fertige Programm mit Python. Es muss die ZIP aus dem **Releases**-Bereich sein.
@@ -39,7 +39,7 @@ Beim allerersten Start zeigt Windows vielleicht ein blaues Fenster „Windows ha
 
 → Klick auf **„Weitere Informationen"** und dann auf **„Trotzdem ausführen"**.
 
-Falls dein Virenscanner anschlägt: Das Tool startet ein kleines Skript (`.vbs`), das ist für manche Scanner ungewohnt. Du kannst den Ordner als Ausnahme hinzufügen. Der komplette Quellcode ist offen einsehbar — es passiert nichts Verstecktes.
+Falls dein Virenscanner anschlägt: Das Tool startet ein kleines Skript (`.vbs`) — kein Virus, der komplette Quellcode ist offen einsehbar. Bei **Windows Defender** trägst du den entpackten Ordner so als Ausnahme ein: Suchfeld → **„Windows-Sicherheit"** → „Viren- & Bedrohungsschutz" → „Einstellungen verwalten" → ganz unten „Ausschlüsse hinzufügen oder entfernen" → „Ordner" → den entpackten Ordner wählen.
 
 ### Lieber ein Symbol auf dem Desktop?
 
@@ -57,14 +57,16 @@ Damit das Tool deine Discord-Channels lesen kann, muss es sich einmal mit deinem
 
 **So geht's (einfachster Weg — der „🔑 Discord Login"-Knopf):**
 
-1. Im Tool oben auf **Einstellungen** (Settings) klicken.
-2. Dort gibt es einen Knopf/Link **„🔑 Discord Login"**.
-3. **Ziehe** diesen Knopf mit der Maus **einmal in deine Lesezeichenleiste** des Browsers (die Leiste mit deinen gespeicherten Seiten ganz oben). Falls die Leiste nicht sichtbar ist: `Strg + Umschalt + B` blendet sie ein.
-4. Öffne einen neuen Tab und gehe auf **[discord.com](https://discord.com)** — und logge dich dort ganz normal ein (falls nicht schon eingeloggt).
-5. Klicke jetzt — während Discord offen ist — oben in der Lesezeichenleiste auf das eben gezogene **„🔑 Discord Login"**.
+1. Im Tool oben auf **Einstellungen** (Settings) klicken. Dort gibt es einen Knopf **„🔑 Discord Login"**.
+2. **Blende zuerst die Lesezeichenleiste ein.** Das ist die schmale Leiste direkt **unter der Adresszeile**, in der gespeicherte Webseiten liegen. Siehst du sie nicht? Drücke **`Strg + Umschalt + B`** — dann erscheint sie.
+3. **Ziehe** den Knopf **„🔑 Discord Login"** mit gedrückter Maustaste in diese Leiste und lass ihn dort los. Er liegt jetzt als kleines Lesezeichen oben in der Leiste.
+4. Öffne einen neuen Tab, gehe auf **[discord.com](https://discord.com)** und logge dich dort ganz normal ein (falls nicht schon eingeloggt).
+5. Klicke jetzt — während Discord offen ist — oben in der Lesezeichenleiste auf dein neues **„🔑 Discord Login"**.
 6. Es öffnet sich automatisch wieder das Tool, oben erscheint ein grüner Hinweis **„Logged in as … ✓"**. **Fertig — du bist eingeloggt.**
 
-**Falls das Ziehen nicht klappt (Alternative — Token einfügen):**
+**Nur als Notlösung (falls das Lesezeichen partout nicht klappt):**
+
+> ⚠️ Dieser Weg ist deutlich technischer. Bist du unsicher, frag lieber kurz die Person, von der du das Tool hast — der Lesezeichen-Weg oben ist fast immer einfacher.
 
 In den Einstellungen gibt es auch ein Feld zum **Einfügen eines Tokens**. Den Token bekommst du so:
 1. Discord im Browser öffnen, `F12` drücken (Entwickler-Werkzeuge).
@@ -78,13 +80,13 @@ Dein Login wird nur **lokal** in der Datei `.env` gespeichert und ausschließlic
 
 ## 5. Channels & Quellen auswählen
 
-1. In den **Einstellungen** auf **„Refresh servers & channels"** klicken — das lädt deine Discord-Server und Channels.
+1. In den **Einstellungen** auf den (englischsprachigen) Knopf **„Refresh servers & channels"** klicken — er heißt genau so und lädt deine Discord-Server und Kanäle.
 2. Bei den Channels, die du verfolgen willst, das **Häkchen** setzen.
 3. Wechsle oben auf **Feed** (alles in einem Strom) oder **Spalten** (jede Quelle als eigene Spalte).
 
 ### X / Twitter als Spalte
 
-Einstellungen → **„Nitter / X profiles"** → einen Handle (z. B. `DeItaone`) hinzufügen. Er erscheint als Spalte wie ein Discord-Channel. (Läuft über kostenlose Nitter-Feeds; wenn eine Spalte leer bleibt, in den Einstellungen die Nitter-Instanz wechseln.)
+Einstellungen → **„Nitter / X profiles"** → deinen Twitter-/X-Benutzernamen (z. B. `DeItaone`, **ohne** das @-Zeichen) hinzufügen. Er erscheint als Spalte wie ein Discord-Channel. (Läuft über kostenlose Nitter-Feeds; wenn eine Spalte leer bleibt, in den Einstellungen die Nitter-Instanz wechseln.)
 
 ### News als Spalte
 
@@ -121,7 +123,7 @@ Einfach den **Browser-Tab schließen**. Das Tool fährt sich nach wenigen Sekund
 - Hat SmartScreen/Virenscanner blockiert? Siehe Schritt 3.
 
 **Der Browser zeigt „Diese Seite funktioniert nicht" / leere Seite.**
-- Das Backend war noch nicht bereit. Seite **neu laden** (`F5`) oder den Starter erneut doppelklicken.
+- Das Backend war noch nicht bereit. Seite **neu laden** (`F5`) oder **`Discord Control Center starten.vbs`** erneut doppelklicken.
 
 **„Port 8020 belegt" / es startet doppelt.**
 - Jeder Start beendet vorher automatisch die alte Instanz. Falls es klemmt: PC einmal neu starten und erneut versuchen.

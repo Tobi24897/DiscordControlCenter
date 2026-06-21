@@ -21,9 +21,11 @@ SO STARTEST DU (3 Schritte):
       "Trotzdem ausfuehren". Ist normal, kein Virus.)
 
   3) Oben in den EINSTELLUNGEN einmal mit Discord einloggen:
-     den Knopf "Discord Login" in die Lesezeichenleiste
-     des Browsers ziehen, dann auf discord.com darauf
-     klicken. Fertig - du bist eingeloggt.
+     den Knopf "Discord Login" in die Lesezeichenleiste des
+     Browsers ziehen, dann auf discord.com darauf klicken.
+     (Lesezeichenleiste nicht sichtbar? Mit Strg+Umschalt+B
+     einblenden - die schmale Leiste unter der Adresszeile.)
+     Fertig - du bist eingeloggt.
 
 
 BEENDEN:
