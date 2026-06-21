@@ -1,68 +1,68 @@
 # Discord Control Center
 
-**Alle deine Trading-Discords, X-Feeds und News in EINEM Fenster — als übersichtliches Spalten-Dashboard (wie TweetDeck / X Pro).**
+**All your trading Discords, X feeds, and news in ONE window — a clean column dashboard (like TweetDeck / X Pro).**
 
-Statt zwischen 10 Discord-Channels und mehreren Tabs hin- und herzuspringen, läuft alles in einem ruhigen, dunklen Dashboard nebeneinander: Discord-Channels, X/Twitter-Profile und News-Schlagzeilen (WSJ, FT, CNBC, Bloomberg …) — jede Quelle als eigene Spalte.
+Instead of jumping between 10 Discord channels and several browser tabs, everything sits side by side in one calm, dark dashboard: Discord channels, X/Twitter profiles, and news headlines (WSJ, FT, CNBC, Bloomberg …) — each source as its own column.
 
-Läuft lokal auf deinem Windows-PC. **Keine Installation, kein Programmieren, kostenlos.**
+Runs locally on your Windows PC. **No installation, no coding, free.**
 
-![Discord Control Center — Einstellungen mit allen Quellen](docs/settings.png)
-
----
-
-## ⬇️ Herunterladen & Starten (für alle — auch ohne Technik-Kenntnisse)
-
-> **Wichtig:** Benutze **NICHT** den grünen „Code → Download ZIP"-Knopf oben. Der gibt dir nur den Quellcode *ohne* das fertige Programm.
-
-**So geht's richtig — in 2 Minuten:**
-
-1. **[➡️ Hier die fertige ZIP herunterladen](https://github.com/Tobi24897/DiscordControlCenter/releases/latest)** — auf der Release-Seite die Datei **`DiscordControlCenter.zip`** anklicken.
-2. ZIP **entpacken** (Rechtsklick → „Alle extrahieren…"). Den entpackten Ordner irgendwohin legen, z. B. auf den Desktop.
-3. Im Ordner **`Discord Control Center starten.vbs`** doppelklicken.
-4. Der Browser öffnet sich. Oben in den **Einstellungen** einmal mit Discord einloggen (ein Klick, siehe Anleitung) — fertig.
-
-👉 **Die ausführliche, bebilderte Schritt-für-Schritt-Anleitung steht in [GUIDE.md](GUIDE.md).** Wenn irgendwas hakt: dort steht auch die Problemlösung.
-
-**Fenster zu = Programm aus.** Schließt du den Browser-Tab, fährt sich das Tool von selbst herunter — wie ein normales Programm. Keine Reste, kein „läuft im Hintergrund weiter".
+![Discord Control Center — settings with all sources](docs/settings.png)
 
 ---
 
-## Was kann es?
+## ⬇️ Download & Run (for everyone — no tech skills needed)
 
-- **Feed** — alle ausgewählten Discord-Channels chronologisch in einem Strom, mit Suche.
-- **Spalten** — eine Spalte pro Quelle nebeneinander (X-Pro-Style), frei anordnen, Breite einstellbar.
-- **X / Twitter** — beliebige öffentliche Profile als Spalte (über kostenlose Nitter-Feeds).
-- **News** — Schlagzeilen von WSJ, FT, CNBC, MarketWatch, Bloomberg & Reuters (via Google News), Yahoo, Nasdaq … oder jede beliebige RSS-Adresse.
-- **DMs** — Discord-Direktnachrichten lesen, schreiben, antworten, Freundesliste, Screenshots per Einfügen (Strg+V) mitschicken.
-- **Benachrichtigungen** — Desktop-Hinweis + Ton pro Channel, optional nur bei Stichwörtern (`$` = jeder Cashtag).
-- **Cashtags** wie `$AAPL` werden direkt zu TradingView verlinkt.
+> **Important:** Do **NOT** use the green "Code → Download ZIP" button at the top. That gives you only the source code *without* the ready-to-run program.
 
-Alles **kostenlos** — keine bezahlten APIs, keine Abos, keine Cloud. Deine Daten bleiben auf deinem PC.
+**The right way — in 2 minutes:**
 
----
+1. **[➡️ Download the ready-to-run ZIP here](https://github.com/Tobi24897/DiscordControlCenter/releases/latest)** — on the release page, click the file **`DiscordControlCenter.zip`** (under "Assets").
+2. **Unzip** it (right-click → "Extract All…"). Put the extracted folder somewhere, e.g. on your Desktop.
+3. Double-click **`Start Discord Control Center.vbs`** inside the folder.
+4. Your browser opens. In **Settings**, log in to Discord once (one click — see the guide). Done.
 
-## Häufige Fragen
+👉 **The full, illustrated step-by-step guide is in [GUIDE.md](GUIDE.md).** If anything goes wrong, the fix is there too.
 
-**Muss ich etwas installieren?** Nein. Python ist bereits im Ordner mit dabei (portable). Einfach entpacken und starten.
-
-**Kostet das was?** Nein. Komplett kostenlos.
-
-**Wo liegen meine Daten?** Nur lokal auf deinem PC (`data\` im Ordner). Dein Discord-Login wird nur lokal gespeichert (`.env`) und ausschließlich an Discord selbst geschickt — nirgendwo sonst hin, nichts wird hochgeladen.
-
-**Ist das offiziell von Discord?** Nein. Das Tool greift mit deinem persönlichen Discord-Login (User-Token, dasselbe Prinzip wie DiscordChatExporter) auf die Discord-Schnittstelle zu. Das Automatisieren eines normalen User-Accounts **verstößt gegen die Discord-Nutzungsbedingungen** — Nutzung auf eigenes Risiko, ohne Gewähr. Das Tool liest bewusst langsam und schonend; Nachrichten werden **nur** manuell von dir gesendet, nie automatisch. Halte dich an die Regeln deiner Server.
-
-**Windows warnt beim Start („Windows hat Ihren PC geschützt")?** Das ist normal bei kleinen, nicht signierten Tools. „Weitere Informationen" → „Trotzdem ausführen". Details in [GUIDE.md](GUIDE.md).
+**Close the window = quit.** When you close the browser tab, the tool shuts itself down — like a normal program. No leftovers, nothing "still running in the background".
 
 ---
 
-## Für Technik-Interessierte
+## What can it do?
 
-Lokale Web-App: **FastAPI + SQLite + SSE** (Backend, Python) und **React + Tailwind** (Frontend, vorgebaut in `frontend/dist/`). Das Backend pollt die Discord-REST-API inkrementell, dazu Nitter-RSS und generische RSS-Feeds als weitere Spaltenquellen. Port **8020**, alles lokal.
+- **Feed** — all selected Discord channels in one chronological stream, with search.
+- **Columns** — one column per source, side by side (X-Pro style), freely arranged, adjustable width.
+- **X / Twitter** — any public profile as a column (via free Nitter feeds).
+- **News** — headlines from WSJ, FT, CNBC, MarketWatch, Bloomberg & Reuters (via Google News), Yahoo, Nasdaq … or any RSS URL.
+- **DMs** — read, write, and reply to Discord direct messages, friends list, send screenshots by paste (Ctrl+V).
+- **Notifications** — desktop alert + sound per channel, optionally only on keywords (`$` = any cashtag).
+- **Cashtags** like `$AAPL` link straight to TradingView.
 
-Aus dem Quellcode selbst bauen/starten: siehe **[GUIDE.md → „Aus dem Quellcode starten"](GUIDE.md#aus-dem-quellcode-starten-für-entwickler)**.
+Everything **free** — no paid APIs, no subscriptions, no cloud. Your data stays on your PC.
 
 ---
 
-## Lizenz / Haftung
+## FAQ
 
-Privates Hobby-Projekt, ohne Gewähr, zur freien Nutzung unter Freunden. Keine Haftung für Account-Sperren, Datenverlust oder sonstige Schäden. Du bist für die Nutzung deines eigenen Discord-Accounts selbst verantwortlich.
+**Do I have to install anything?** No. Python is already bundled in the folder (portable). Just unzip and start.
+
+**Does it cost anything?** No. Completely free.
+
+**Where is my data?** Only locally on your PC (`data\` in the folder). Your Discord login is stored only locally (`.env`) and sent only to Discord itself — nowhere else, nothing is uploaded.
+
+**Is this official from Discord?** No. The tool accesses the Discord API with your personal Discord login (user token, the same principle as DiscordChatExporter). Automating a normal user account **violates Discord's Terms of Service** — use at your own risk, no warranty. The tool reads slowly and gently on purpose; messages are sent **only** manually by you, never automatically. Follow your servers' rules.
+
+**Windows warns on start ("Windows protected your PC")?** Normal for small, unsigned tools. "More info" → "Run anyway". Details in [GUIDE.md](GUIDE.md).
+
+---
+
+## For the technically curious
+
+Local web app: **FastAPI + SQLite + SSE** (backend, Python) and **React + Tailwind** (frontend, pre-built in `frontend/dist/`). The backend polls the Discord REST API incrementally, plus Nitter RSS and generic RSS feeds as additional column sources. Port **8020**, all local.
+
+Build/run from source: see **[GUIDE.md → "Run from source"](GUIDE.md#run-from-source-for-developers)**.
+
+---
+
+## License / Liability
+
+Private hobby project, no warranty, free to use among friends. No liability for account bans, data loss, or any other damage. You are responsible for how you use your own Discord account.

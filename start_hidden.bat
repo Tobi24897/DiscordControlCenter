@@ -1,6 +1,6 @@
 @echo off
 REM Discord Control Center — silent backend wrapper.
-REM Called by "Discord Control Center starten.vbs" (hidden). Fresh boot on every
+REM Called by "Start Discord Control Center.vbs" (hidden). Fresh boot on every
 REM launch: kill any existing instance (incl. orphans), free the port, then start
 REM one clean detached backend using the bundled portable Python (no install).
 REM No instance is running yet when the kill runs, so it can never target the

@@ -1,13 +1,13 @@
-' Discord Control Center — Start (Doppelklick auf diese Datei).
+' Discord Control Center — Start (double-click this file).
 '
-' Bei jedem Klick:
-'   1. Backend frisch starten: start_hidden.bat beendet eine evtl. laufende
-'      (auch haengengebliebene) Instanz, gibt Port 8020 frei und startet EINE
-'      saubere Instanz mit dem mitgelieferten Python (keine Installation noetig).
-'   2. Das Dashboard im Browser oeffnen (Chrome bevorzugt, sonst Standardbrowser).
+' On every click:
+'   1. Fresh-start the backend: start_hidden.bat stops any running (or stuck)
+'      instance, frees port 8020, and starts ONE clean instance using the
+'      bundled Python (no installation needed).
+'   2. Open the dashboard in your browser (Chrome preferred, else the default).
 '
-' Fenster schliessen = Programm beenden: solange der Tab offen ist, haelt er die
-' Verbindung; ist kein Tab mehr verbunden, faehrt sich das Backend selbst herunter.
+' Close window = quit: while the tab is open it holds the connection; once no
+' tab is connected, the backend shuts itself down.
 
 Option Explicit
 
@@ -20,10 +20,10 @@ If Not fso.FolderExists(root & "\data") Then
     fso.CreateFolder root & "\data"
 End If
 
-' 1. Backend frisch hochfahren (hidden, und WARTEN bis Port 8020 gebunden ist).
+' 1. Boot the backend (hidden, and WAIT until port 8020 is bound).
 shell.Run """" & root & "\start_hidden.bat""", 0, True
 
-' 2. Genau einen Tab oeffnen. Chrome bevorzugen, sonst Standardbrowser.
+' 2. Open exactly one tab. Prefer Chrome, else the default browser.
 Dim chromeExe
 chromeExe = findChromeExe()
 If chromeExe <> "" Then

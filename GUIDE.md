@@ -1,159 +1,157 @@
-# 📖 Anleitung — Discord Control Center
+# 📖 Guide — Discord Control Center
 
-Diese Anleitung führt dich Schritt für Schritt durch alles. Du brauchst **keine** Technik-Kenntnisse und musst **nichts** installieren. Wenn du an einer Stelle hängst, schau unten unter [„Es klappt nicht?"](#-es-klappt-nicht-problemlösung).
+This guide walks you through everything, step by step. You need **no** tech skills and you **don't** have to install anything. If you get stuck, see [Troubleshooting](#-it-doesnt-work-troubleshooting) at the bottom.
 
-**Voraussetzung:** Ein Windows-10- oder Windows-11-PC. Das war's.
-
----
-
-## 1. Herunterladen
-
-1. Gehe auf die **[Releases-Seite](https://github.com/Tobi24897/DiscordControlCenter/releases/latest)** des Projekts.
-2. Lade dort die Datei **`DiscordControlCenter.zip`** herunter (unter „Assets").
-
-> ⚠️ Benutze **nicht** den grünen Knopf „Code → Download ZIP" auf der Startseite. Der enthält nur den Quellcode, **nicht** das fertige Programm mit Python. Es muss die ZIP aus dem **Releases**-Bereich sein.
+**Requirement:** A Windows 10 or Windows 11 PC. That's it.
 
 ---
 
-## 2. Entpacken
+## 1. Download
 
-1. Die heruntergeladene `DiscordControlCenter.zip` im Downloads-Ordner suchen.
-2. **Rechtsklick → „Alle extrahieren…"** → „Extrahieren".
-3. Den entpackten Ordner an einen festen Platz schieben, z. B. auf den **Desktop**.
+1. Go to the **[Releases page](https://github.com/Tobi24897/DiscordControlCenter/releases/latest)**.
+2. Download the file **`DiscordControlCenter.zip`** there (under "Assets").
 
-> ⚠️ **Wichtig:** Das Tool muss aus dem **entpackten** Ordner gestartet werden — **nicht** aus der ZIP heraus (also nicht doppelt in die ZIP klicken und von dort starten). Sonst findet es seine Dateien nicht.
-
----
-
-## 3. Starten
-
-Im entpackten Ordner liegt eine Datei namens:
-
-> **`Discord Control Center starten.vbs`**
-
-**Doppelklick** darauf. Nach ein paar Sekunden öffnet sich automatisch dein Browser mit dem Dashboard.
-
-### „Windows hat Ihren PC geschützt" — was tun?
-
-Beim allerersten Start zeigt Windows vielleicht ein blaues Fenster „Windows hat Ihren PC geschützt" (SmartScreen). Das ist normal bei kleinen, nicht teuer signierten Programmen und **kein Virus**.
-
-→ Klick auf **„Weitere Informationen"** und dann auf **„Trotzdem ausführen"**.
-
-Falls dein Virenscanner anschlägt: Das Tool startet ein kleines Skript (`.vbs`) — kein Virus, der komplette Quellcode ist offen einsehbar. Bei **Windows Defender** trägst du den entpackten Ordner so als Ausnahme ein: Suchfeld → **„Windows-Sicherheit"** → „Viren- & Bedrohungsschutz" → „Einstellungen verwalten" → ganz unten „Ausschlüsse hinzufügen oder entfernen" → „Ordner" → den entpackten Ordner wählen.
-
-### Lieber ein Symbol auf dem Desktop?
-
-Doppelklick auf **`Desktop-Verknuepfung erstellen.vbs`** im Ordner. Danach liegt ein **„Discord Control Center"**-Symbol auf dem Desktop, über das du das Tool künftig direkt startest.
+> ⚠️ Do **not** use the green "Code → Download ZIP" button on the start page. That only contains the source code, **not** the ready-to-run program with Python. It must be the ZIP from the **Releases** section.
 
 ---
 
-## 4. Einmalig: Mit Discord einloggen
+## 2. Unzip
 
-Damit das Tool deine Discord-Channels lesen kann, muss es sich einmal mit deinem Discord verbinden. **Du musst dafür nichts Kompliziertes machen** — ein Lesezeichen-Klick reicht.
+1. Find the downloaded `DiscordControlCenter.zip` in your Downloads folder.
+2. **Right-click → "Extract All…"** → "Extract".
+3. Move the extracted folder somewhere permanent, e.g. your **Desktop**.
 
-> Hintergrund: Das Tool meldet sich mit deinem normalen Discord-Login an (dein „Token"). Du tippst dabei **kein Passwort** ins Tool. Das Lesezeichen holt den Login direkt aus deinem bereits eingeloggten Discord im Browser.
-
-![Einstellungen mit dem „Discord Login"-Knopf](docs/settings.png)
-
-**So geht's (einfachster Weg — der „🔑 Discord Login"-Knopf):**
-
-1. Im Tool oben auf **Einstellungen** (Settings) klicken. Dort gibt es einen Knopf **„🔑 Discord Login"**.
-2. **Blende zuerst die Lesezeichenleiste ein.** Das ist die schmale Leiste direkt **unter der Adresszeile**, in der gespeicherte Webseiten liegen. Siehst du sie nicht? Drücke **`Strg + Umschalt + B`** — dann erscheint sie.
-3. **Ziehe** den Knopf **„🔑 Discord Login"** mit gedrückter Maustaste in diese Leiste und lass ihn dort los. Er liegt jetzt als kleines Lesezeichen oben in der Leiste.
-4. Öffne einen neuen Tab, gehe auf **[discord.com](https://discord.com)** und logge dich dort ganz normal ein (falls nicht schon eingeloggt).
-5. Klicke jetzt — während Discord offen ist — oben in der Lesezeichenleiste auf dein neues **„🔑 Discord Login"**.
-6. Es öffnet sich automatisch wieder das Tool, oben erscheint ein grüner Hinweis **„Logged in as … ✓"**. **Fertig — du bist eingeloggt.**
-
-**Nur als Notlösung (falls das Lesezeichen partout nicht klappt):**
-
-> ⚠️ Dieser Weg ist deutlich technischer. Bist du unsicher, frag lieber kurz die Person, von der du das Tool hast — der Lesezeichen-Weg oben ist fast immer einfacher.
-
-In den Einstellungen gibt es auch ein Feld zum **Einfügen eines Tokens**. Den Token bekommst du so:
-1. Discord im Browser öffnen, `F12` drücken (Entwickler-Werkzeuge).
-2. Reiter **„Network"** (Netzwerk) öffnen, irgendeine Zeile mit `discord.com` anklicken.
-3. Rechts unter **„Request Headers"** die Zeile **`authorization`** suchen, deren langen Wert kopieren.
-4. Im Tool ins Token-Feld einfügen → **Speichern**. Fertig.
-
-Dein Login wird nur **lokal** in der Datei `.env` gespeichert und ausschließlich an Discord selbst geschickt — sonst nirgendwohin.
+> ⚠️ **Important:** Run the tool from the **extracted** folder — **not** from inside the ZIP (don't double-click into the ZIP and start it from there). Otherwise it can't find its files.
 
 ---
 
-## 5. Channels & Quellen auswählen
+## 3. Start
 
-1. In den **Einstellungen** auf den (englischsprachigen) Knopf **„Refresh servers & channels"** klicken — er heißt genau so und lädt deine Discord-Server und Kanäle.
-2. Bei den Channels, die du verfolgen willst, das **Häkchen** setzen.
-3. Wechsle oben auf **Feed** (alles in einem Strom) oder **Spalten** (jede Quelle als eigene Spalte).
+Inside the extracted folder there's a file called:
 
-### X / Twitter als Spalte
+> **`Start Discord Control Center.vbs`**
 
-Einstellungen → **„Nitter / X profiles"** → deinen Twitter-/X-Benutzernamen (z. B. `DeItaone`, **ohne** das @-Zeichen) hinzufügen. Er erscheint als Spalte wie ein Discord-Channel. (Läuft über kostenlose Nitter-Feeds; wenn eine Spalte leer bleibt, in den Einstellungen die Nitter-Instanz wechseln.)
+**Double-click** it. After a few seconds your browser opens automatically with the dashboard.
 
-### News als Spalte
+### "Windows protected your PC" — what to do?
 
-Einstellungen → **„News feeds"** → eine Voreinstellung wählen (WSJ, FT, CNBC, MarketWatch, Bloomberg & Reuters via Google News, Yahoo, Nasdaq …) oder eine beliebige RSS-Adresse einfügen. Jede Schlagzeile verlinkt auf den Artikel.
+On the very first start, Windows may show a blue "Windows protected your PC" window (SmartScreen). This is normal for small programs that aren't expensively signed, and is **not a virus**.
 
-### DMs (Direktnachrichten)
+→ Click **"More info"**, then **"Run anyway"**.
 
-Reiter **DMs**: Unterhaltungen und Gruppen lesen, **schreiben und antworten**, Freundesliste. Du kannst per **Strg + V** einen Screenshot direkt mit hineinkopieren oder Dateien per Büroklammer/Drag-&-Drop anhängen.
+If your antivirus complains: the tool starts a small script (`.vbs`) — not a virus, the full source code is open to inspect. In **Windows Defender** you can add the extracted folder as an exclusion: search box → **"Windows Security"** → "Virus & threat protection" → "Manage settings" → at the bottom "Add or remove exclusions" → "Folder" → choose the extracted folder.
 
----
+### Prefer an icon on your desktop?
 
-## 6. Bedienung — die wichtigsten Handgriffe
-
-- **Spalten anordnen:** Spaltenüberschrift mit der Maus ziehen (oder die Pfeile nutzen). Wird gespeichert.
-- **Spaltenbreite:** Der **S / M / L / XL**-Knopf pro Spalte.
-- **Spalte „leeren":** Das Häkchen an der Spalte zeigt ab jetzt nur noch neue Nachrichten.
-- **Verlauf-Tiefe:** Einstellungen → **„History window"** legt fest, wie weit zurück geladen und wie lange gespeichert wird (Standard: 1 Woche).
-- **Benachrichtigungen:** Pro Channel an/aus, optional nur bei Stichwörtern. Beim ersten Mal fragt der Browser nach Erlaubnis für Desktop-Hinweise — „Zulassen".
-- **`$TICKER`** anklicken → öffnet den TradingView-Chart.
+Double-click **`Create Desktop Shortcut.vbs`** in the folder. A **"Discord Control Center"** icon then appears on your desktop, which you can use to start the tool from now on.
 
 ---
 
-## 7. Beenden
+## 4. One time: log in to Discord
 
-Einfach den **Browser-Tab schließen**. Das Tool fährt sich nach wenigen Sekunden von selbst komplett herunter — kein Hintergrundprozess bleibt übrig. Beim nächsten Doppelklick startet alles wieder frisch.
+So the tool can read your Discord channels, it has to connect to your Discord once. **You don't have to do anything complicated** — one bookmark click is enough.
+
+> Background: the tool signs in with your normal Discord login (your "token"). You don't type any password into the tool. The bookmark grabs the login directly from your already-logged-in Discord in the browser.
+
+**How to do it (easiest way — the "🔑 Discord Login" button):**
+
+1. In the tool, click **Settings** at the top. There's a button **"🔑 Discord Login"**.
+2. **First, show the bookmarks bar.** That's the thin bar right **below the address bar** where saved websites live. Don't see it? Press **`Ctrl + Shift + B`** — then it appears.
+3. **Drag** the **"🔑 Discord Login"** button into that bar with the mouse held down, and drop it there. It now sits as a small bookmark at the top.
+4. Open a new tab, go to **[discord.com](https://discord.com)**, and log in there as usual (if you're not already).
+5. Now — while Discord is open — click your new **"🔑 Discord Login"** in the bookmarks bar.
+6. The tool reopens automatically and a green note **"Logged in as … ✓"** appears at the top. **Done — you're logged in.**
+
+**Only as a last resort (if the bookmark really won't work):**
+
+> ⚠️ This way is much more technical. If you're unsure, better ask whoever gave you the tool — the bookmark way above is almost always easier.
+
+Settings also has a field to **paste a token**. You get the token like this:
+1. Open Discord in the browser, press `F12` (developer tools).
+2. Open the **"Network"** tab, click any line with `discord.com`.
+3. On the right, under **"Request Headers"**, find the line **`authorization`** and copy its long value.
+4. Paste it into the token field in the tool → **Save**. Done.
+
+Your login is stored only **locally** in the `.env` file and sent only to Discord itself — nowhere else.
 
 ---
 
-## 🛟 Es klappt nicht? (Problemlösung)
+## 5. Pick channels & sources
 
-**Nach dem Doppelklick passiert nichts / kein Browser öffnet sich.**
-- Warte 10–15 Sekunden — der erste Start dauert etwas.
-- Öffne den Browser selbst und tippe in die Adresszeile: `http://localhost:8020`
-- Hat SmartScreen/Virenscanner blockiert? Siehe Schritt 3.
+1. In **Settings**, click **"Refresh servers & channels"** — this loads your Discord servers and channels.
+2. **Tick** the channels you want to follow.
+3. Switch to **Feed** (everything in one stream) or **Columns** (each source as its own column) at the top.
 
-**Der Browser zeigt „Diese Seite funktioniert nicht" / leere Seite.**
-- Das Backend war noch nicht bereit. Seite **neu laden** (`F5`) oder **`Discord Control Center starten.vbs`** erneut doppelklicken.
+### X / Twitter as a column
 
-**„Port 8020 belegt" / es startet doppelt.**
-- Jeder Start beendet vorher automatisch die alte Instanz. Falls es klemmt: PC einmal neu starten und erneut versuchen.
+Settings → **"Nitter / X profiles"** → add your Twitter/X username (e.g. `DeItaone`, **without** the @ sign). It appears as a column like a Discord channel. (Runs via free Nitter feeds; if a column stays empty, switch the Nitter instance in Settings.)
 
-**Spalten von X/Twitter bleiben leer.**
-- Die kostenlosen Nitter-Server sind mal erreichbar, mal nicht. In den Einstellungen unter „Nitter / X profiles" eine andere Instanz eintragen.
+### News as a column
 
-**„Token ungültig" / rote Anzeige oben.**
-- Dein Discord-Login ist abgelaufen. Einfach Schritt 4 (Lesezeichen-Klick) noch einmal machen.
+Settings → **"News feeds"** → pick a preset (WSJ, FT, CNBC, MarketWatch, Bloomberg & Reuters via Google News, Yahoo, Nasdaq …) or paste any RSS URL. Each headline links to the article.
 
-**Discord-Bilder/Charts laden nicht.**
-- Discord-Bild-Links laufen nach einiger Zeit ab; neue Nachrichten laden wieder normal.
+### DMs (direct messages)
+
+**DMs** tab: read conversations and groups, **write and reply**, friends list. You can paste a screenshot straight in with **Ctrl + V**, or attach files via the paperclip / drag-and-drop.
 
 ---
 
-## Aus dem Quellcode starten (für Entwickler)
+## 6. Using it — the most important moves
 
-Wer Python (3.12+) und Node selbst installiert hat, braucht das gebündelte `python\` nicht:
+- **Arrange columns:** drag a column header with the mouse (or use the arrows). Saved automatically.
+- **Column width:** the **S / M / L / XL** button per column.
+- **"Clear" a column:** the checkmark on a column shows only new messages from then on.
+- **History depth:** Settings → **"History window"** sets how far back it loads and how long it keeps messages (default: 1 week).
+- **Notifications:** on/off per channel, optionally keyword-only. The first time, the browser asks permission for desktop alerts — "Allow".
+- **`$TICKER`** click → opens the TradingView chart.
+
+---
+
+## 7. Quitting
+
+Just **close the browser tab**. The tool shuts itself down completely after a few seconds — no background process is left. The next double-click starts everything fresh.
+
+---
+
+## 🛟 It doesn't work? (Troubleshooting)
+
+**Nothing happens after double-clicking / no browser opens.**
+- Wait 10–15 seconds — the first start takes a moment.
+- Open your browser yourself and type into the address bar: `http://localhost:8020`
+- Did SmartScreen/antivirus block it? See step 3.
+
+**The browser shows "This site can't be reached" / a blank page.**
+- The backend wasn't ready yet. **Reload** the page (`F5`) or double-click **`Start Discord Control Center.vbs`** again.
+
+**"Port 8020 in use" / it starts twice.**
+- Every start automatically stops the old instance first. If it's stuck: restart the PC once and try again.
+
+**X/Twitter columns stay empty.**
+- The free Nitter servers are sometimes reachable, sometimes not. In Settings under "Nitter / X profiles", enter a different instance.
+
+**"Token invalid" / red indicator at the top.**
+- Your Discord login expired. Just do step 4 (the bookmark click) again.
+
+**Discord images/charts don't load.**
+- Discord image links expire after a while; new messages load fine again.
+
+---
+
+## Run from source (for developers)
+
+If you have Python (3.12+) and Node installed yourself, you don't need the bundled `python\`:
 
 ```
 pip install -r requirements.txt
-# Frontend ist in frontend/dist/ bereits gebaut; zum Neubauen:
+# The frontend is already built in frontend/dist/; to rebuild:
 #   cd frontend && npm install && npm run build
 python backend/main.py
 ```
 
-Standard-Port ist `8020` (in `.env` über `SERVER_PORT` änderbar; `.env.example` als Vorlage kopieren). Datenbank liegt in `data/crawler.db` (SQLite).
+Default port is `8020` (change via `SERVER_PORT` in `.env`; copy `.env.example` as a template). The database lives in `data/crawler.db` (SQLite).
 
 ---
 
-## ⚖️ Wichtiger Hinweis
+## ⚖️ Important note
 
-Das Tool nutzt deinen persönlichen Discord-Login (User-Token), um die Discord-Schnittstelle zu lesen — dasselbe Prinzip wie das bekannte DiscordChatExporter. Das **Automatisieren eines normalen User-Accounts verstößt gegen die Discord-Nutzungsbedingungen**. Nutzung auf **eigenes Risiko**, ohne Gewähr. Das Tool liest bewusst langsam und schonend, und Nachrichten werden **nur manuell von dir** gesendet, nie automatisch oder massenhaft. Sei vernünftig und halte dich an die Regeln deiner Server.
+The tool uses your personal Discord login (user token) to read the Discord API — the same principle as the well-known DiscordChatExporter. **Automating a normal user account violates Discord's Terms of Service.** Use at your **own risk**, no warranty. The tool reads slowly and gently on purpose, and messages are sent **only manually by you**, never automatically or in bulk. Be sensible and follow your servers' rules.

@@ -1,0 +1,59 @@
+============================================================
+  DISCORD CONTROL CENTER  —  Quick Start
+============================================================
+
+All your trading Discords, X feeds, and news in ONE clean
+dashboard. Runs locally on your Windows PC. No install, free.
+
+
+HOW TO START (3 steps):
+----------------------------------------
+
+  1) UNZIP this folder first (if it is still inside the ZIP):
+     right-click the ZIP -> "Extract All".
+     IMPORTANT: do not start it from inside the ZIP!
+
+  2) Double-click:
+       "Start Discord Control Center.vbs"
+     -> Your browser opens with the dashboard.
+     (If Windows warns: "More info" -> "Run anyway".
+      That is normal, not a virus.)
+
+  3) In SETTINGS at the top, log in to Discord once:
+     drag the "Discord Login" button into your browser's
+     bookmarks bar, then click it while on discord.com.
+     (Don't see the bookmarks bar? Press Ctrl+Shift+B -
+      it's the thin bar under the address bar.)
+     Done - you're logged in.
+
+
+QUIT:
+----------------------------------------
+  Just close the browser tab. The tool shuts itself down.
+  The next double-click starts it fresh.
+
+
+DESKTOP ICON (optional):
+----------------------------------------
+  Double-click "Create Desktop Shortcut.vbs"
+  -> puts a start icon on your desktop.
+
+
+NEED HELP / SOMETHING STUCK?
+----------------------------------------
+  The full guide with every step and troubleshooting is in
+  the file  GUIDE.md  (open it with a text editor or read it
+  on GitHub).
+
+
+NOTE:
+----------------------------------------
+  The tool uses your personal Discord login to read the
+  Discord API (like DiscordChatExporter). This violates
+  Discord's Terms of Service - use at your own risk. It only
+  reads slowly/gently; messages are always sent by YOU,
+  never automatically.
+
+  Your data stays local on your PC. Your login is sent only
+  to Discord, nowhere else.
+============================================================
