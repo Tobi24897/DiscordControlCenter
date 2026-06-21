@@ -1,0 +1,19 @@
+# Secrets & user data — never commit
+.env
+data/
+
+# Bundled portable runtime — shipped via the Release ZIP / Google Drive, not git
+# (it's ~45 MB of binaries; the repo stays lean source-only)
+python/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Node (frontend ships pre-built in frontend/dist/, source in frontend/src/)
+node_modules/
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+.vscode/
